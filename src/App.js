@@ -154,7 +154,7 @@ function App() {
                   refresh();
                 }
                 return (
-                  <Item style={{ width: "75px" }}>
+                  <Item style={{ width: "60px" }}>
                     <PrefButton onClick={handleClick}>
                       {bd.smiley}
                       <br />
