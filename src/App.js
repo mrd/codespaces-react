@@ -1,11 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
-//import Slider from "@material-ui/core/Slider";
-import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
-import { styled } from "@mui/material/styles";
-//import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
+import { Button, Grid, Paper, styled } from "@mui/material";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
