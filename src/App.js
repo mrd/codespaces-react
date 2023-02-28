@@ -92,6 +92,65 @@ function randompick(arr, num = 1) {
 }
 
 function App() {
+  const [surveyData, setSurveyData] = useState({age: false});
+
+  if (surveyData.age) {
+    return MainScreen();
+  } else {
+    return Survey(setSurveyData);
+  }
+
+}
+
+function Survey(setSurveyData) {
+  function handleClick() {
+    setSurveyData({age: true});
+  }
+  return <>
+  <h1>Survey</h1>
+    <Grid container>
+      <Grid item xs={4}>
+        <label>Age</label>
+      </Grid>
+      <Grid item xs={8}>
+        <select>
+          <option value="18-25">18-25</option>
+          <option value="26-35">26-35</option>
+          <option value="36-45">36-45</option>
+          <option value="46-55">46-55</option>
+          <option value="56-65">56-65</option>
+          <option value="66-75">66-75</option>
+          <option value="76-85">76-85</option>
+          <option value="86+">86+</option>
+        </select>
+      </Grid>
+      <Grid item xs={4}>
+        <label>Income</label>
+      </Grid>
+      <Grid item xs={8}>
+        <select>
+          <option value="0-20k">0-20k</option>
+          <option value="20k-40k">20k-40k</option>
+          <option value="40k-60k">40k-60k</option>
+          <option value="60k-80k">60k-80k</option>
+          <option value="80k-100k">80k-100k</option>
+          <option value="100k+">100k+</option>
+        </select>
+      </Grid>
+      <Grid item xs={4}>
+        <label>Postal code</label>
+      </Grid>
+      <Grid item xs={8}>
+        <input type="text" />
+      </Grid>
+      <Grid item xs={12}>
+        <Button onClick={handleClick}>Submit</Button>
+      </Grid>
+    </Grid>
+  </>;
+}
+
+function MainScreen() {
     const PrefButton = styled(Button)({
     textTransform: "none"
   });
@@ -179,7 +238,7 @@ function App() {
                   <Grid item xs={4}>
                     <Item>
                       <Streetview id="imp" name={img} />
-                    </Item>
+                   </Item>
                   </Grid>
                 );
               })}
